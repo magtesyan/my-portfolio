@@ -1,46 +1,57 @@
 {
-  "name": "myportfolio",
-  "version": "1.0.0",
-  "description": "my frontend portfolio",
-  "main": "index.js",
+  "name": "create-html-boilerplate",
+  "version": "1.0.1",
+  "description": "create-html-boilerplate",
   "scripts": {
-    "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint \"source/scss/**/*.scss\" --syntax scss",
-    "test": "npm run editorconfig && npm run stylelint",
-    "build": "gulp build",
-    "start": "gulp start"
+    "stylelint": "stylelint \"source/scss/**/*.(scss|css)\"",
+    "eslint": "eslint \"source/js/**/*.js\"",
+    "test": "concurrently npm:stylelint npm:eslint",
+    "build": "webpack -p",
+    "prettier": "prettier --write \"source/(scss|js)/**/*.(scss|css|js|json)\"",
+    "start": "webpack-dev-server --open"
   },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "autoprefixer": "^9.7.4",
-    "browser-sync": "^2.26.7",
-    "del": "^5.1.0",
-    "gulp": "^4.0.2",
-    "gulp-plumber": "^1.2.1",
-    "gulp-postcss": "^8.0.0",
-    "gulp-posthtml": "^3.0.4",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2",
-    "posthtml-include": "^1.4.0",
-    "stylelint": "^13.2.1",
-    "stylelint-config-htmlacademy": "^0.1.4"
-  },
-  "browserslist": [
-    "defaults"
-  ],
-  "editorconfig-cli": [
-    "*.json",
-    "*.js",
-    "source/*.html",
-    "source/js/**/*.js",
-    "source/img/**/*.svg",
-    "source/scss/**/*.scss"
-  ],
   "engines": {
-    "node" : ">=12.13"
+    "node": "^10.16"
   },
-  "dependencies": {}
+  "dependencies": {
+    "concurrently": "^5.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.11.4",
+    "@babel/preset-env": "7.11.0",
+    "@babel/preset-react": "7.10.4",
+    "autoprefixer": "9.8.6",
+    "babel-loader": "8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "6.0.3",
+    "css-loader": "4.2.1",
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "7.20.6",
+    "html-webpack-plugin": "^4.3.0",
+    "imagemin-webp-webpack-plugin": "3.3.2",
+    "imagemin-webpack-plugin": "2.4.2",
+    "mini-css-extract-plugin": "0.9.0",
+    "node-sass": "4.14.1",
+    "optimize-css-assets-webpack-plugin": "5.0.3",
+    "postcss-loader": "3.0.0",
+    "prettier": "^2.0.5",
+    "raw-loader": "4.0.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "sass-loader": "9.0.3",
+    "stylelint": "13.6.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.18.0",
+    "terser-webpack-plugin": "4.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0"
+  }
 }
