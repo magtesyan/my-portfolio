@@ -1,0 +1,14 @@
+.btn {
+  display: block;
+  padding: 20px 45px;
+  font-family: $roboto;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: $redLight;
+  background-color: $white;
+  border-radius: 40px;
+
+  &_full-shadow {
+    box-shadow: 5px 1px $purple, -2px 6px $red;
+  }
+}

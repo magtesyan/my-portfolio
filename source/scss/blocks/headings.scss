@@ -1,0 +1,25 @@
+.headings__title {
+  &_black {
+    color: $black;
+  }
+
+  &_white {
+    color: $white;
+  }
+}
+
+.headings__subtitle {
+  color: $pink;
+}
+
+.headings__name {
+  font-size: 100px;
+  line-height: 115px;
+  letter-spacing: 12px;
+  text-shadow: 7px 9px $red, 12px 12px $purple, -3px 11px $pink;
+}
+
+.headings__position {
+  font-family: $hand-font;
+  font-size: 75px;
+}
